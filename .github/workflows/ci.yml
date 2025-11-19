@@ -43,7 +43,7 @@ jobs:
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
-                  name: test-report
+                  name: test-report-${{ matrix.os }}-${{ matrix.node }}
                   path: reports/test-report-${{ matrix.os }}-${{ matrix.node }}.json
     lint_code:
         needs: Build-Test
